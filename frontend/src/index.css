@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   HELVETICA NEUE
+   ========================================== */
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helveticaneue.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helveticaneue-medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('./assets/fonts/helveticaneue-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* ==========================================
+   SNELL ROUNDHAND
+   ========================================== */
+
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('./assets/fonts/snell-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('./assets/fonts/snell-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Snell Roundhand';
+  src: url('./assets/fonts/snell-black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   Course Program Carausel
+   ========================================== */
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
