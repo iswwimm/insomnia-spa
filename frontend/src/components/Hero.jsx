@@ -2,36 +2,41 @@ import React from 'react';
 import heroImg from '../assets/hero-nails.jpg';
 
 function Hero() {
-  const symbols = "･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ";
+  const symbols = "･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ";
 
   return (
-    <section className="relative w-full h-[650px] lg:h-[900px] bg-white flex flex-col justify-start items-center">
+    <section className="relative w-full h-[clamp(450px,65vw,870px)] bg-white flex flex-col justify-end items-center overflow-hidden mb-10 md:mb-16">
       
       <div className="absolute inset-0 w-full h-full z-0">
+        
         <img 
           src={heroImg} 
           alt="Insomnia Nails Detail" 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white"></div>
+
+        <div className="absolute inset-0 bg-white/25"></div>
+
+        <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-white via-white/60 to-transparent"></div>
+        
       </div>
 
-      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1040px] max-h-[360] pt-[550px]">
-        <h1 className="font-snell text-[130px] md:text-[220px] lg:text-[286px] leading-[0.55] text-black">
+      <div className="relative z-10 flex flex-col items-center text-center w-full max-w-[1200px] xl:max-w-[1400px] px-2">
+        
+        <h1 className="font-snell font-medium text-black leading-none text-[clamp(85px,22vw,326px)] px-[clamp(16px,5vw,80px)] drop-shadow-sm translate-y-[clamp(0px,6vw,70px)]">
           Insomnia
         </h1>
 
-        <p className="font-helvetica font-medium text-[20px] md:text-[36px] text-black mt-[20px] md:mt-[32px] tracking-wide">
+        <p className="font-helvetica font-medium text-black text-[clamp(16px,2.5vw,36px)] leading-none mt-[clamp(8px,2vw,20px)] mb-[clamp(28px,6vw,94px)] tracking-wide">
           zapisy na szkolenie otwarte
         </p>
-      </div>
 
-      <div className="relative z-10 w-full pb-16 flex justify-center">
-        <div className="max-w-[1440px] px-4 overflow-hidden flex justify-center">
-          <p className="font-helvetica font-medium text-[22px] md:text-[36px] tracking-[0.1em] whitespace-nowrap text-center">
+        <div className="w-full overflow-hidden flex justify-center opacity-90">
+          <p className="font-helvetica font-bold text-[clamp(19px,2.5vw,36px)] tracking-[0.1em] whitespace-nowrap text-center text-black">
             {symbols}
           </p>
         </div>
+
       </div>
 
     </section>
