@@ -3,15 +3,18 @@ import logoImg from '../assets/logo-header.png';
 
 function Header() {
   return (
-    <header className="w-full h-[125px] flex items-center justify-center">
-      <div className="container h-full flex items-center justify-center">
+    <header className="w-full h-[125px] bg-white flex items-center justify-center relative z-50">
+      <div className="w-full max-w-[1280px] h-full flex items-center justify-center px-4 md:px-8 relative">
+        
         <img
           src={logoImg}
           alt="Insomnia Course Logo"
-          className="h-[50px] md:h-[130px] w-auto object-contain"
+          className="w-[280px] md:w-[400px] lg:w-[540px] h-auto object-contain"
           fetchpriority="high" 
         />
+        
       </div>
+      
     </header>
   );
 }
