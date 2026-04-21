@@ -140,8 +140,8 @@ function CourseProgram() {
   const gapSize = isMobile ? 16 : 56;
 
   return (
-    <section className="w-full bg-white py-16 md:py-[60px] flex flex-col items-center overflow-hidden">
-      <div className="w-full max-w-[1440px] flex items-center justify-center mb-10 md:mb-14 overflow-hidden">
+    <section id="course-program" className="w-full max-w-[1280px] mx-auto bg-white py-16 md:py-[60px] flex flex-col items-center overflow-hidden">
+      <div className="w-full flex items-center justify-center mb-10 md:mb-14 overflow-hidden px-4 md:px-8">
         <div className="flex-1 flex justify-start overflow-hidden whitespace-nowrap opacity-70">
             <span className="font-helvetica font-medium text-black text-[24px] md:text-[36px] leading-[100%] tracking-normal pl-2 md:pl-6">
             {repeatSymbols}

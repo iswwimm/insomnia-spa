@@ -5,7 +5,7 @@ function Hero() {
   const symbols = "･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ";
 
   return (
-    <section className="relative w-full h-[clamp(450px,65vw,870px)] bg-white flex flex-col justify-end items-center overflow-hidden mb-10 md:mb-16">
+    <section className="relative w-full max-w-[1280px] mx-auto h-[clamp(450px,65vw,870px)] bg-white flex flex-col justify-end items-center overflow-hidden mb-10 md:mb-16">
       
       <div className="absolute inset-0 w-full h-full z-0">
         

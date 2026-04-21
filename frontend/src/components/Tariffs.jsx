@@ -7,8 +7,8 @@ function Tariffs() {
   const symbolsRight = "･ﾟ✩ *:･ﾟ✧  ｡･ﾟ♡ﾟ･｡";
 
   return (
-    <section className="w-full bg-white py-[clamp(64px,6vw,80px)] flex flex-col items-center overflow-hidden">
-        <div className="w-full max-w-[1440px] flex items-center justify-center mb-[clamp(40px,4vw,50px)] overflow-hidden px-4 md:px-8">
+    <section className="w-full max-w-[1280px] mx-auto bg-white py-[clamp(64px,6vw,80px)] flex flex-col items-center overflow-hidden">
+        <div className="w-full flex items-center justify-center mb-[clamp(40px,4vw,50px)] overflow-hidden px-4 md:px-8">
             
             <div className="flex-1 flex justify-end overflow-hidden whitespace-nowrap opacity-60">
             <span className="font-helvetica tracking-[0.1em] text-black text-[clamp(18px,2.5vw,36px)] pr-3 lg:pr-6">

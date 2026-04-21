@@ -3,7 +3,7 @@ import windowControlsImg from '../assets/window-controls.svg';
 
 function CourseOutcomes() {
   return (
-    <section className="w-full bg-white pb-8 md:pb-16">
+    <section className="w-full max-w-[1280px] mx-auto bg-white pb-8 md:pb-16">
       <div className="container px-4 md:px-8 flex justify-center">
         
         <div className="w-full max-w-[1150px] bg-[#F5E1EC] border border-black rounded-[20px] overflow-hidden shadow-sm">

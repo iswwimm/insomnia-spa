@@ -54,7 +54,7 @@ function LearningProcess() {
   ];
 
   return (
-    <section className="w-full bg-white py-16 lg:py-[60px] flex justify-center px-4 lg:px-8">
+    <section className="w-full max-w-[1280px] mx-auto bg-white py-16 lg:py-[60px] flex justify-center px-4 md:px-8">
       
       <div className="w-full max-w-[1150px] flex flex-col md:flex-row bg-[#FFE5F3] rounded-[20px] overflow-hidden shadow-sm h-auto lg:h-[390px]">
         

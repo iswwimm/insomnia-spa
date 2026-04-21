@@ -3,7 +3,7 @@ import cardImg from '../assets/nails-card.jpg';
 
 function TargetAudience() {
   return (
-    <section className="w-full bg-white pb-8 md:pb-16 pt-8 md:pt-16">
+    <section className="w-full max-w-[1280px] mx-auto bg-white pb-8 md:pb-16 pt-8 md:pt-16">
       <div className="container px-4 md:px-16">
         
         <div className="w-full border border-gray-300 rounded-[24px] md:rounded-[40px] px-6 py-8 md:px-9 md:py-10 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
