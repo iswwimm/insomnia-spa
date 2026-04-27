@@ -11,78 +11,101 @@ const programModules = [
     id: 0,
     moduleName: "Moduł 0",
     title: "przygotowanie stanowiska",
-    type: null,
-    items: [
-      "prawidłowe przygotowanie stanowiska dla efektywnej pracy",
-      "nazwy i linki do niezbędnych materiałów"
+    sections: [
+      {
+        type: null,
+        items: [
+          "prawidłowe przygotowanie stanowiska dla efektywnej pracy",
+          "nazwy i linki do niezbędnych materiałów"
+        ]
+      }
     ],
     image: mod0Img,
-    heights: { desktop: { text: 220, photo: 265 }, mobile: { text: 150, photo: 220 } }
   },
   {
     id: 1,
     moduleName: "Moduł 1.1",
     title: "przygotowanie płytki",
-    type: "Część teoretyczna",
-    items: [
-      "budowa paznokcia",
-      "bazy i ich właściwości",
-      "lista najczęściej spotykanych zapowietrzeń pod bazą"
+    sections: [
+      {
+        type: "Część teoretyczna",
+        items: [
+          "budowa paznokcia",
+          "bazy i ich właściwości",
+          "lista najczęściej spotykanych zapowietrzeń pod bazą"
+        ]
+      }
     ],
     image: mod1_1Img,
-    heights: { desktop: { text: 290, photo: 195 }, mobile: { text: 190, photo: 180 } }
   },
   {
     id: 2,
     moduleName: "Moduł 1.2",
     title: "przygotowanie płytki",
-    type: "Część praktyczna",
-    items: [
-      "mechaniczne przygotowanie płytki",
-      "schemat opracowania skórek",
-      "chemiczne przygotowanie płytki"
+    sections: [
+      {
+        type: "Część praktyczna",
+        items: [
+          "mechaniczne przygotowanie płytki",
+          "schemat opracowania skórek",
+          "chemiczne przygotowanie płytki"
+        ]
+      }
     ],
     image: mod1_2Img,
-    heights: { desktop: { text: 250, photo: 235 }, mobile: { text: 170, photo: 200 } }
   },
   {
     id: 3,
     moduleName: "Moduł 2",
     title: "dobranie formy",
-    type: "Część teoretyczna i praktyczna",
-    items: [
-      "kryteria postawienia formy",
-      "dobieranie prawidłowego rozmiaru pod każdy typ paznokci",
-      "dobieranie górnej formy na paznokieć (praktyka)"
+    sections: [
+      {
+        type: "Część teoretyczna",
+        items: [
+          "kryteria postawienia formy",
+          "dobieranie prawidłowego rozmiaru pod każdy typ paznokci"
+        ]
+      },
+      {
+        type: "Część praktyczna",
+        items: [
+          "dobieranie górnej formy na paznokieć"
+        ]
+      }
     ],
     image: mod2Img,
-    heights: { desktop: { text: 340, photo: 145 }, mobile: { text: 230, photo: 140 } }
   },
   {
     id: 4,
     moduleName: "Moduł 3",
     title: "tworzenie szkieletu od 0",
-    type: null,
-    items: [
-      "praktyczna demonstracja przedłużenia szkieletu - schemat",
-      "prawidłowe ułożenie żelu na formie",
-      "piłowanie kształtów — równy kwadrat i szpic"
+    sections: [
+      {
+        type: null,
+        items: [
+          "praktyczna demonstracja przedłużenia szkieletu - schemat",
+          "prawidłowe ułożenie żelu na formie",
+          "piłowanie kształtów — równy kwadrat i szpic"
+        ]
+      }
     ],
     image: mod3Img,
-    heights: { desktop: { text: 255, photo: 230 }, mobile: { text: 190, photo: 180 } }
   },
   {
     id: 5,
     moduleName: "Moduł 4",
     title: "budowa żelem",
-    type: null,
-    items: [
-      "nauka metody bez opiłowania",
-      "schemat — efektowne i szybkie nałożenie żelu",
-      "opracowanie gotowego paznokcia"
+    sections: [
+      {
+        type: null,
+        items: [
+          "nauka metody bez opiłowania",
+          "schemat — efektowne i szybkie nałożenie żelu",
+          "opracowanie gotowego paznokcia"
+        ]
+      }
     ],
     image: mod4Img,
-    heights: { desktop: { text: 230, photo: 255 }, mobile: { text: 170, photo: 200 } }
   }
 ];
 
@@ -122,11 +145,9 @@ function CourseProgram() {
     touchEndX.current = null;
     touchStartX.current = e.targetTouches[0].clientX;
   };
-
   const onTouchMove = (e) => {
     touchEndX.current = e.targetTouches[0].clientX;
   };
-
   const onTouchEnd = () => {
     if (!touchStartX.current || !touchEndX.current) return;
     const distance = touchStartX.current - touchEndX.current;
@@ -136,29 +157,29 @@ function CourseProgram() {
   };
 
   const repeatSymbols = "✧･ﾟ✩ *:･ﾟ✧ ｡･ﾟ♡ﾟ･｡☆ﾟ.*･｡ﾟ ".repeat(10);
-  
-  const gapSize = isMobile ? 16 : 56;
+  const gapSize = isMobile ? 16 : 57;
 
   return (
-    <section id="course-program" className="w-full max-w-[1280px] mx-auto bg-white py-16 md:py-[60px] flex flex-col items-center overflow-hidden">
-      <div className="w-full flex items-center justify-center mb-10 md:mb-14 overflow-hidden px-4 md:px-8">
+    <section id="course-program" className="w-full max-w-[1280px] mx-auto bg-white mb-[clamp(40px,5vw,64px)] flex flex-col items-center overflow-hidden">
+      
+      <div className="w-full flex items-center justify-center mb-[clamp(32px,5vw,56px)] overflow-hidden px-4 md:px-8">
         <div className="flex-1 flex justify-start overflow-hidden whitespace-nowrap opacity-70">
-            <span className="font-helvetica font-medium text-black text-[24px] md:text-[36px] leading-[100%] tracking-normal pl-2 md:pl-6">
+          <span className="font-helvetica font-medium text-black text-[clamp(20px,3vw,36px)] leading-none tracking-normal pl-2 md:pl-6">
             {repeatSymbols}
-            </span>
+          </span>
         </div>
-        <span className="px-2 md:px-6 font-snell font-normal text-[45px] md:text-[96px] text-black leading-none tracking-[-0.01em] text-center pb-2 shrink-0">
-        Program szkolenia
-        </span>
+        <h2 className="px-[clamp(8px,2vw,24px)] font-snell font-medium text-[clamp(44px,6vw,96px)] text-black leading-none tracking-[-0.01em] text-center pb-2 shrink-0">
+          Program szkolenia
+        </h2>
         <div className="flex-1 flex justify-start overflow-hidden whitespace-nowrap opacity-70">
-            <span className="font-helvetica font-medium text-black text-[24px] md:text-[36px] leading-[100%] tracking-normal pl-2 md:pl-6">
+          <span className="font-helvetica font-medium text-black text-[clamp(20px,3vw,36px)] leading-none tracking-normal pl-2 md:pl-6">
             {repeatSymbols}
-            </span>
+          </span>
         </div>
       </div>
 
       <div 
-        className="w-[350px] max-w-[100vw] md:w-[1076px] overflow-hidden mx-auto relative"
+        className="w-[clamp(343px,90vw,1079px)] overflow-hidden mx-auto relative touch-pan-y"
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
@@ -172,93 +193,93 @@ function CourseProgram() {
           {pages.map((page, pageIndex) => (
             <div 
               key={pageIndex} 
-              className="w-full shrink-0 flex justify-center gap-4 md:gap-16"
-              style={{ marginRight: pageIndex === totalPages - 1 ? '0' : `${gapSize}px` }}
+              className="w-full shrink-0 flex justify-center"
+              style={{ gap: `${gapSize}px`, marginRight: pageIndex === totalPages - 1 ? '0' : `${gapSize}px` }}
             >
               
-              {page.map((mod) => {
-                const textHeight = isMobile ? mod.heights.mobile.text : mod.heights.desktop.text;
-                const photoHeight = isMobile ? mod.heights.mobile.photo : mod.heights.desktop.photo;
-
-                return (
-                  <div 
-                    key={mod.id} 
-                    className="w-[350px] max-w-[100vw] md:w-[510px] h-[370px] md:h-[485px] flex flex-col border border-[#000000] rounded-[20px] bg-gradient-to-b from-[#FFF0F6] to-[#FFFFFF] overflow-hidden shadow-sm"
-                  >
+              {page.map((mod) => (
+                <article 
+                  key={mod.id} 
+                  className="flex-1 max-w-[511px] h-[clamp(371px,50vw,485px)] flex flex-col border border-black rounded-[20px] bg-gradient-to-b from-[#FFE5F3] to-white overflow-hidden shadow-sm"
+                >
+                  
+                  <div className="w-full shrink-0 px-[clamp(16px,3vw,24px)] pt-[clamp(18px,3vw,24px)] pb-4 flex flex-col">
                     
-                    <div 
-                      className="px-6 py-6 md:px-[34px] md:py-[30px] overflow-hidden"
-                      style={{ height: `${textHeight}px` }}
-                    >
-                      <div className="mb-4">
-                        <span className="font-snell text-[38px] md:text-[46px] font-bold text-black leading-none">
-                          {mod.moduleName} -
-                        </span>
-                        <h3 className="text-black text-[20px] md:text-[24px] mt-1 leading-tight">
-                          {mod.title}
-                        </h3>
-                      </div>
-                      {mod.type && (
-                        <p className="font-bold text-[16px] md:text-[18px] mb-4 text-black">
-                          {mod.type}
-                        </p>
-                      )}
-                      <ul className="space-y-3">
-                        {mod.items.map((item, index) => (
-                          <li key={index} className="flex items-start text-[15px] md:text-[17px] text-black leading-snug">
-                            <span className="mr-2 mt-[0px] text-[16px]">•</span>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-[clamp(8px,2vw,16px)]">
+                      <span className="font-snell italic font-bold text-[clamp(24px,3vw,38px)] text-black leading-none">
+                        {mod.moduleName}
+                      </span>
+                      <h3 className="font-helvetica font-normal text-black text-[clamp(16px,2vw,24px)] leading-none">
+                        — {mod.title}
+                      </h3>
                     </div>
 
-                    <div 
-                      className="w-full shrink-0 border-t border-gray-200"
-                      style={{ height: `${photoHeight}px` }}
-                    >
-                      {mod.image ? (
-                        <img src={mod.image} alt={mod.moduleName} className="w-full h-full object-cover" />
-                      ) : (
-                        <div className="w-full h-full flex justify-center items-center bg-gray-100 text-gray-400 text-sm">
-                          Фото
+                    <div className="flex flex-col gap-[clamp(12px,2vw,20px)]">
+                      {mod.sections.map((section, sIdx) => (
+                        <div key={sIdx} className="flex flex-col">
+                          {section.type && (
+                            <p className="font-helvetica font-medium text-[clamp(16px,2vw,24px)] mb-[clamp(6px,1.5vw,12px)] text-black leading-none">
+                              {section.type}
+                            </p>
+                          )}
+                          
+                          <ul className="flex flex-col gap-[clamp(4px,1vw,8px)]">
+                            {section.items.map((item, index) => (
+                              <li key={index} className="flex items-start font-helvetica font-normal text-[clamp(16px,2vw,24px)] text-black leading-[clamp(20px,3vw,29px)]">
+                                <span className="mr-[clamp(6px,1vw,8px)] mt-[-1px] text-[clamp(16px,2vw,24px)]">•</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                      )}
+                      ))}
                     </div>
 
                   </div>
-                );
-              })}
+
+                  <div className="w-full flex-1 min-h-0">
+                    {mod.image ? (
+                      <img src={mod.image} alt={mod.moduleName} className="w-full h-full object-cover object-top" />
+                    ) : (
+                      <div className="w-full h-full flex justify-center items-center bg-gray-50 text-gray-400 text-sm">
+                        Brak obrazu
+                      </div>
+                    )}
+                  </div>
+
+                </article>
+              ))}
 
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex justify-center items-center gap-4 mt-8 md:mt-12 px-4">
+      <div className="flex justify-center items-center gap-[clamp(12px,2vw,20px)] mt-[clamp(24px,4vw,40px)] px-4">
         <button 
           onClick={prevPage}
           disabled={currentPage === 0}
+          aria-label="Попередня сторінка"
           className={`p-2 transition-all duration-300 ${
-            currentPage === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 text-gray-400 hover:text-black cursor-pointer'
+            currentPage === 0 ? 'opacity-30 pointer-events-none' : 'opacity-100 text-[#777777] hover:text-black cursor-pointer'
           }`}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
+          <svg width="clamp(16px,3vw,24px)" height="clamp(16px,3vw,24px)" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="rotate-180">
             <path d="M9 18l6-6-6-6" />
           </svg>
         </button>
 
-        <div className="flex gap-3 items-center">
+        <div className="flex gap-[clamp(5px,1vw,8px)] items-center">
           {pages.map((_, idx) => (
             <button
               key={idx}
               onClick={() => setCurrentPage(idx)}
+              aria-label={`Перейти до сторінки ${idx + 1}`}
               className={`rounded-full transition-all duration-500 ease-in-out ${
                 currentPage === idx 
-                  ? 'bg-gray-500 w-[14px] h-[14px] md:w-[16px] md:h-[16px]' 
-                  : 'bg-[#E0E0E0] w-[12px] h-[12px] md:w-[14px] md:h-[14px] hover:bg-gray-400'
+                  ? 'bg-[#777777] w-[clamp(14px,2vw,22px)] h-[clamp(14px,2vw,22px)]' 
+                  : 'bg-[#D9D9D9] w-[clamp(14px,2vw,22px)] h-[clamp(14px,2vw,22px)] hover:bg-gray-400'
               }`}
-              aria-label={`Перейти до сторінки ${idx + 1}`}
             />
           ))}
         </div>
@@ -266,11 +287,12 @@ function CourseProgram() {
         <button 
           onClick={nextPage}
           disabled={currentPage === totalPages - 1}
+          aria-label="Наступна сторінка"
           className={`p-2 transition-all duration-300 ${
-            currentPage === totalPages - 1 ? 'opacity-0 pointer-events-none' : 'opacity-100 text-gray-400 hover:text-black cursor-pointer'
+            currentPage === totalPages - 1 ? 'opacity-30 pointer-events-none' : 'opacity-100 text-[#777777] hover:text-black cursor-pointer'
           }`}
         >
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="clamp(16px,3vw,24px)" height="clamp(16px,3vw,24px)" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
             <path d="M9 18l6-6-6-6" />
           </svg>
         </button>
@@ -281,4 +303,3 @@ function CourseProgram() {
 }
 
 export default CourseProgram;
-
