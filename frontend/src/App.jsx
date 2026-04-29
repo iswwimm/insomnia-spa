@@ -7,6 +7,8 @@ import CourseOutcomes from './components/CourseOutcomes';
 import CourseProgram from './components/CourseProgram';
 import LearningProcess from './components/LearningProcess';
 import Tariffs from './components/Tariffs';
+import Reviews from './components/Reviews';
+import AboutMe from './components/AboutMe';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <CourseProgram />
         <LearningProcess />
         <Tariffs />
+        <Reviews />
+        <AboutMe />
         
       </div>
 
