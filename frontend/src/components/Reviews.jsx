@@ -155,6 +155,7 @@ function Reviews() {
                       src={review.image} 
                       alt={review.alt} 
                       className="w-full h-full max-h-[366px] object-contain md:object-cover rounded-[8px] drop-shadow-sm"
+                      loading="lazy"
                     />
                   </div>
                 ))}

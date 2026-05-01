@@ -84,6 +84,7 @@ function LearningProcess() {
             src={ipadImg} 
             alt="Proces nauki na iPadzie" 
             className="w-full h-full object-cover"
+            loading="lazy"
           />
         </div>
 

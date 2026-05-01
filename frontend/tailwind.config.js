@@ -25,6 +25,19 @@ export default {
       boxShadow: {
         'win-out': '2px 2px 0px #ffffff inset, -2px -2px 0px #000000 inset',
         'win-in': '2px 2px 0px #000000 inset, -2px -2px 0px #ffffff inset',
+      },
+      keyframes: {
+        shimmer: {
+          '100%': { transform: 'translateX(200%)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        }
+      },
+      animation: {
+        shimmer: 'shimmer 1.5s infinite',
+        fadeIn: 'fadeIn 0.3s ease-out forwards',
       }
     },
   },

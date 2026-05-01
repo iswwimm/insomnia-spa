@@ -239,7 +239,7 @@ function CourseProgram() {
 
                   <div className="w-full flex-1 min-h-0">
                     {mod.image ? (
-                      <img src={mod.image} alt={mod.moduleName} className="w-full h-full object-cover object-top" />
+                      <img src={mod.image} alt={mod.moduleName} className="w-full h-full object-cover object-top" loading="lazy" />
                     ) : (
                       <div className="w-full h-full flex justify-center items-center bg-gray-50 text-gray-400 text-sm">
                         Brak obrazu

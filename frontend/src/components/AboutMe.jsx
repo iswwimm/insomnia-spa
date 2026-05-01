@@ -34,6 +34,7 @@ function AboutMe() {
             src={aboutImg} 
             alt="Karina - Instruktor stylizacji paznokci" 
             className="w-full h-auto object-cover rounded-[clamp(10px,1.5vw,13px)] shadow-sm"
+            loading="lazy"
           />
         </div>
 

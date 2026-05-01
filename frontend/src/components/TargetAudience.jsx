@@ -40,6 +40,7 @@ function TargetAudience() {
             src={cardImg} 
             alt="Stylizacja paznokci" 
             className="w-full h-full object-cover rounded-[19px]"
+            loading="lazy"
           />
         </div>
 
