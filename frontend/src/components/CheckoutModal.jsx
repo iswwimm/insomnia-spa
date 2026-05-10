@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-function CheckoutModal({ onClose }) {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+function CheckoutModal({ onClose, initialMode = 'form' }) {
+  const [isSubmitted, setIsSubmitted] = useState(initialMode === 'success');
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -46,15 +48,42 @@ function CheckoutModal({ onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
-      return;
-    }
+    if (!validateForm()) return;
 
-    console.log("Data ready for submission:", formData);
-    setIsSubmitted(true); 
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:3000/api/checkout/create-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.url) {
+        
+        window.location.href = data.url; 
+      } else {
+        console.error('Error in backend:', data.error || data);
+        alert('Wystąpił błąd podczas inicjalizacji płatności. Spróbuj ponownie.');
+      }
+
+    } catch (error) {
+      console.error('Error in network request (CORS or server down):', error);
+      alert('Brak połączenia z serwerem. Sprawdź swoje połączenie internetowe.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (

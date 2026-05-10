@@ -4,12 +4,17 @@
   "description": "Simple webpage for Insomnia",
   "main": "index.js",
   "scripts": {
-  "install:all": "npm install --prefix frontend && npm install --prefix backend",
-  "dev:frontend": "npm run dev --prefix frontend",
-  "dev:backend": "npm run dev --prefix backend",
-  "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
-},
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "build:frontend": "npm run build --prefix frontend",
+    "deploy": "npm run build:frontend && gh-pages -d frontend/dist"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }

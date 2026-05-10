@@ -259,7 +259,7 @@ function CourseProgram() {
         <button 
           onClick={prevPage}
           disabled={currentPage === 0}
-          aria-label="Попередня сторінка"
+          aria-label="Previous page"
           className={`p-2 transition-all duration-300 ${
             currentPage === 0 ? 'opacity-30 pointer-events-none' : 'opacity-100 text-[#777777] hover:text-black cursor-pointer'
           }`}
@@ -274,7 +274,7 @@ function CourseProgram() {
             <button
               key={idx}
               onClick={() => setCurrentPage(idx)}
-              aria-label={`Перейти до сторінки ${idx + 1}`}
+              aria-label={`Go to page ${idx + 1}`}
               className={`rounded-full transition-all duration-500 ease-in-out ${
                 currentPage === idx 
                   ? 'bg-[#777777] w-[clamp(14px,2vw,22px)] h-[clamp(14px,2vw,22px)]' 
@@ -287,7 +287,7 @@ function CourseProgram() {
         <button 
           onClick={nextPage}
           disabled={currentPage === totalPages - 1}
-          aria-label="Наступна сторінка"
+          aria-label="Next page"
           className={`p-2 transition-all duration-300 ${
             currentPage === totalPages - 1 ? 'opacity-30 pointer-events-none' : 'opacity-100 text-[#777777] hover:text-black cursor-pointer'
           }`}

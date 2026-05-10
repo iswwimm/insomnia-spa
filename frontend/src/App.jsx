@@ -16,9 +16,25 @@ import CheckoutModal from './components/CheckoutModal';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => setIsModalOpen(true);
+  const [modalMode, setModalMode] = useState('form'); 
+  const openModal = () => {
+    setModalMode('form');
+    setIsModalOpen(true);
+  };
   const closeModal = () => setIsModalOpen(false);
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    if (urlParams.get('payment') === 'success') {
+      console.log("Payment successful!");
+      setModalMode('success');
+      setIsModalOpen(true);
+
+      setTimeout(() => {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }, 500);
+    }
+  }, []);
 
   useEffect(() => {
     if (isModalOpen) {
@@ -44,7 +60,7 @@ function App() {
         <CourseOutcomes />
         <CourseProgram />
         <LearningProcess />
-        <Tariffs /> 
+        <Tariffs  /> 
         <Reviews />
         <AboutMe />
         <FAQ />
@@ -55,7 +71,10 @@ function App() {
       </div>
 
       {isModalOpen && (
-        <CheckoutModal onClose={closeModal} />
+        <CheckoutModal 
+          onClose={closeModal} 
+          initialMode={modalMode} 
+        />
       )}
 
     </div>
