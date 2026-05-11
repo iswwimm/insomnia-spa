@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const { sendCourseAccessEmail } = require('./utils/emailService');
 const { PrismaClient } = require('@prisma/client');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
@@ -44,9 +45,10 @@ app.post('/api/webhook', express.raw({ type: 'application/json' }), async (req, 
 
       console.log(`Payment for order ${updatedOrder.id} completed.`);
 
+      await sendCourseAccessEmail(updatedOrder.customerEmail, updatedOrder.customerName);
 
     } catch (error) {
-      console.error('Error updating DB:', error);
+      console.error('Error updating DB or sending email:', error);
     }
   }
 
