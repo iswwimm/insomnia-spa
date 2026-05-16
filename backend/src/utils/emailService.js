@@ -3,11 +3,11 @@ const { Resend } = require('resend');
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const sendCourseAccessEmail = async (userEmail, userName) => {
-  const telegramLink = "https://t.me/insomnia_course_pro";
+  const telegramLink = "https://t.me/insomnia_course_nails";
 
   const htmlTemplate = `
     <div style="font-family: Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff; color: #1a1a1a;">
-      <h1 style="color: #000000; text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px;">Insomnia Course Pro</h1>
+      <h1 style="color: #000000; text-align: center; border-bottom: 2px solid #f0f0f0; padding-bottom: 20px;">Insomnia Course Nails</h1>
       
       <p style="font-size: 16px; line-height: 1.6;">Hello <strong>${userName}</strong>,</p>
       
@@ -33,7 +33,7 @@ const sendCourseAccessEmail = async (userEmail, userName) => {
     const data = await resend.emails.send({
       from: 'Insomnia Course <onboarding@resend.dev>',
       to: userEmail,
-      subject: 'Access to Course: Insomnia Course Pro',
+      subject: 'Access to Course: Insomnia Course Nails',
       html: htmlTemplate,
     });
     

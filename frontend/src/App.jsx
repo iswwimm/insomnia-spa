@@ -13,15 +13,18 @@ import FAQ from './components/FAQ';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import CheckoutModal from './components/CheckoutModal';
+import AdminDashboard from './components/AdminDashboard'; 
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMode, setModalMode] = useState('form'); 
+
   const openModal = () => {
     setModalMode('form');
     setIsModalOpen(true);
   };
   const closeModal = () => setIsModalOpen(false);
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     
@@ -47,6 +50,12 @@ function App() {
       document.body.style.overflow = 'unset';
     };
   }, [isModalOpen]);
+
+  const currentPath = window.location.pathname;
+
+  if (currentPath.endsWith('/insomnia-admin')) {
+    return <AdminDashboard />;
+  }
 
   return (
     <div className="min-h-screen bg-white flex justify-center font-helvetica text-insomnia-dark relative">
